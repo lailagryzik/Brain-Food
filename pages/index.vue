@@ -48,8 +48,11 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire"
-          :disabled="name!='Laila Gryzik' || password!='123456789'"> anmelden </v-btn>
+          <v-btn 
+            color="primary" 
+            nuxt @click="login"
+            :disabled="name!='Laila Gryzik' || password!='123456789'"
+          > anmelden </v-btn>
         </v-card-actions>
       </v-card>
     </v-col>
@@ -67,6 +70,21 @@ export default {
       password: "",
       show1: false,
     };
-  }
+  },
+  methods: {
+    login() {
+      localStorage.setItem("name", this.name);
+      localStorage.setItem("versicherungsnummer", this.versicherungsnummer);
+      localStorage.setItem("birthdate", this.birthdate);
+      this.$router.push("/inspire");
+    },
+  },
+  mounted() {
+    this.name = localStorage.getItem("name");
+    this.versicherungsnummer = localStorage.getItem("versicherungsnummer");
+    if(this.name && this.versicherungsnummer) {
+      this.$router.push("/inspire");
+    }
+  },
 };
 </script>
