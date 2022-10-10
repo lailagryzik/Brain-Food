@@ -76,14 +76,14 @@ export default {
       localStorage.setItem("name", this.name);
       localStorage.setItem("versicherungsnummer", this.versicherungsnummer);
       localStorage.setItem("birthdate", this.birthdate);
-      this.$router.push("/inspire");
+      this.$router.push("/startseite");
     },
   },
   mounted() {
     this.name = localStorage.getItem("name");
     this.versicherungsnummer = localStorage.getItem("versicherungsnummer");
     if(this.name && this.versicherungsnummer) {
-      this.$router.push("/inspire");
+      this.$router.push("/startseite");
     }
   },
 };

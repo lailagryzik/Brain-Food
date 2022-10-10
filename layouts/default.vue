@@ -69,7 +69,7 @@ export default {
         {
           icon: "mdi-chart-bubble",
           title: "Stressreduktion",
-          to: "/inspire",
+          to: "/startseite",
         },
       ],
       miniVariant: false,
@@ -80,9 +80,7 @@ export default {
   },
   methods: {
     logout() {
-      localStorage.removeItem("name");
-      localStorage.removeItem("versicherungsnummer");
-      localStorage.removeItem("birthdate");
+      localStorage.clear();
       this.$router.push("/");
     },
   },
