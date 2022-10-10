@@ -7,7 +7,7 @@
             <template v-slot:day="{ date }">
               <v-row class="fill-height">
                 <template v-if="tracked[date]">
-                  <v-card class="mx-auto pa-3">
+                  <v-card flat small class="mx-auto pa-0 mt-4">
                     <!--smileys from very sad to happy based on numbers from 1-5-->
                     <v-icon v-if="tracked[date] == 1" color="red"
                       >mdi-emoticon-dead</v-icon

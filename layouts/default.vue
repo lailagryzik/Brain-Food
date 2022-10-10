@@ -71,6 +71,11 @@ export default {
           title: "Stressreduktion",
           to: "/startseite",
         },
+        {
+          icon: "mdi-brain",
+          title: "Konzentration",
+          to: "/konzentration",
+        },
       ],
       miniVariant: false,
       right: true,
