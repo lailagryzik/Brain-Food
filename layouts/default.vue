@@ -65,10 +65,11 @@ export default {
         },
         {
           icon: "mdi-brain",
-          title: "Konzentration",
-          to: "/konzentration",
+          title: "Ernährungsempfehlungen",
+          to: "/ernährungsempfehlungen",
         },
       ],
+
       right: true,
       rightDrawer: false,
       title: "Vuetify.js",
