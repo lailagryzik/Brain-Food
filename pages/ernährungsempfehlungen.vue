@@ -13,17 +13,10 @@
         ></v-text-field>
         <v-select
           class="mx-2"
-          v-model="selectedMakroFilters"
-          :items="makroFilters"
+          v-model="selectedNutritionFilters"
+          :items="NutritionFilters"
           solo
-          label="Makronährstoffe"
-        ></v-select>
-        <v-select
-          class="mx-2"
-          v-model="selectedMikroFilters"
-          :items="mikroFilters"
-          solo
-          label="Mikronährstoffe"
+          label="Nährstoffe"
         ></v-select>
       </v-row>
       <v-row dense>
@@ -35,6 +28,7 @@
                   :src="f.src"
                   class="white--text align-end"
                   height="200px"
+                  width="275px"
                 >
                   <v-expand-transition>
                     <div
@@ -51,21 +45,22 @@
                       color="primary"
                       class="black--text"
                     >
-                      <v-card class="pa-3" height="100%">
+                      <v-card class="pa-7" height="200px" width="275px">
                         <div v-if="!f.nutrition?.makro">
                           Keine makro nährwerte
                         </div>
                         <div v-else>
-                          <b> makro:</b> {{ f.nutrition?.makro?.join(", ")
-                          }}<br />
+                          <b> Makro:</b> {{ f.nutrition?.makro?.join(", ") }}
                         </div>
+                        <br />
                         <div v-if="!f.nutrition?.mikro">
-                          Keine makro nährwerte
+                          Keine mikro nährwerte
                         </div>
                         <div v-else>
-                          <b> makro:</b> {{ f.nutrition?.mikro?.join(", ")
+                          <b> Mikro:</b> {{ f.nutrition?.mikro?.join(", ")
                           }}<br />
                         </div>
+                        <br />
                       </v-card>
                     </v-overlay>
                   </v-fade-transition>
@@ -73,15 +68,27 @@
                 </v-img>
 
                 <v-card-actions>
-                  <v-spacer></v-spacer>
-                  {{ f.description }}
-                  <v-btn icon>
-                    <v-icon>mdi-heart</v-icon>
-                  </v-btn>
+                  <v-container>
+                    <v-row>
+                      <div>
+                        Konzentrationssteigerung
+                        <v-rating
+                          length="5"
+                          readonly
+                          :value="f.concentration"
+                        ></v-rating></div></v-row
+                    ><v-row>
+                      <div>
+                        Stressreduktion
+                        <v-rating
+                          length="5"
+                          readonly
+                          :value="f.stress"
+                        ></v-rating></div></v-row
+                  ></v-container>
                 </v-card-actions>
-              </v-card>
-            </template></v-hover
-          >
+              </v-card> </template
+          ></v-hover>
         </v-col>
       </v-row>
     </v-container>
@@ -93,31 +100,65 @@ export default {
   data() {
     return {
       searchInput: "",
-      selectedMakroFilters: "kein Filter", //default filter wert für mikro
-      selectedMikroFilters: "kein Filter", //default filter wert für mikro
-      makroFilters: ["kein Filter", "Fett", "Kohlenhydrate", "Protein"], //erlaubte filter werte
-      mikroFilters: ["kein Filter", "Magnesium", "Zink", "Selen"], //erlaubte filter werte
+      selectedNutritionFilters: "kein Filter", //default filter wert für mikro
+      selectedPurposeFilters: "kein Filter", //default filter wert für mikro
+      NutritionFilters: [
+        "kein Filter",
+        "Fett",
+        "Komplexe Kohlenhydrate",
+        "Eiweiß",
+        "Vitamin B1",
+        "Vitamin B3",
+        "Vitamin B6",
+        "Vitamin B9",
+        "Vitamin C",
+        "Vitamin E",
+        "Magnesium",
+        "Kalium",
+        "Eisen",
+        "Zink",
+        "Selen",
+      ], //erlaubte filter werte
+      PurposeFilters: [
+        "kein Filter",
+        "Stressreduktion",
+        "Konzentrationssteigerung",
+      ], //erlaubte filter werte
       food: [
         {
           title: "Wasser",
           src: "https://cdn.pixabay.com/photo/2014/12/24/05/02/drop-of-water-578897_960_720.jpg",
           description: "Wasser ist wichtig für den Körper",
-          nutrition: {},
+          stress: 1,
+          concentration: 1,
+          nutrition: {
+            mikro: [
+              "Spurenelemente",
+              "Magnesium",
+              "Natrium",
+              "Kalium",
+              "Kalzium",
+              "Eisen",
+              "Zink",
+            ],
+          },
         },
         {
           title: "Nüsse",
           src: "https://cdn.pixabay.com/photo/2019/01/31/21/31/nut-3967992_960_720.jpg",
           description: "Wallnüsse sind gut für das Gehirn",
+          stress: 2,
+          concentration: 3,
           nutrition: {
-            makro: ["Protein", "Fett", "Kohlenhydrate"],
+            makro: ["Protein", "Fett", "Komplexe Kohlenhydrate"],
             mikro: [
               "Magnesium",
               "Zink",
               "Kalium",
               "Selen",
-              "VitaminE",
-              "VitaminB1",
-              "VitaminB6",
+              "Vitamin E",
+              "Vitamin B1",
+              "Vitamin B6",
             ],
           },
         },
@@ -125,9 +166,11 @@ export default {
           title: "Vollkornprodukte",
           src: "https://cdn.pixabay.com/photo/2016/03/05/22/21/baked-1239259_960_720.jpg",
           description: "Vollkornprodukte halten lange satt",
+          stress: 3,
+          concentration: 4,
           nutrition: {
-            makro: ["Kohlenhydrate"],
-            mikro: ["Magnesium", , "Zink", "Eisen"],
+            makro: ["Komplexe Kohlenhydrate"],
+            mikro: ["Magnesium", "Zink", "Eisen"],
           },
         },
       ],
@@ -150,14 +193,16 @@ export default {
             .toLowerCase()
             .includes(this.searchInput.toLowerCase())
       );
-      if (this.selectedMakroFilters != "kein Filter") {
-        filtered = filtered.filter((f) =>
-          f.nutrition?.makro?.includes(this.selectedMakroFilters)
+      if (this.selectedNutritionFilters != "kein Filter") {
+        filtered = filtered.filter(
+          (f) =>
+            f.nutrition?.makro?.includes(this.selectedNutritionFilters) ||
+            f.nutrition?.mikro?.includes(this.selectedNutritionFilters)
         );
       }
-      if (this.selectedMikroFilters != "kein Filter") {
+      if (this.selectedPurposeFilters != "kein Filter") {
         filtered = filtered.filter((f) =>
-          f.nutrition?.mikro?.includes(this.selectedMikroFilters)
+          f.nutrition?.purpose?.includes(this.selectedPurposeFilters)
         );
       }
       return filtered;
