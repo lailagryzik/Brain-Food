@@ -68,6 +68,11 @@ export default {
           title: "Ernährungsempfehlungen",
           to: "/ernährungsempfehlungen",
         },
+        {
+          icon: "mdi-noodles",
+          title: "Rezepte",
+          to: "/rezepte",
+        },
       ],
 
       right: true,
