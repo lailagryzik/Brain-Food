@@ -59,7 +59,7 @@
 export default {
   data() {
     return {
-      isLoggedIn: false,
+      isLoggedIn: false, //Anzeige der Nahrungsergänzungsmittel
       food: [
         {
           title: "Vitamin B12",
