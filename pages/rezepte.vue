@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <!--add header-->
-    <v-container fluid>
+    <v-container fluid v-if="this.isLoggedIn">
       <v-row
         ><v-text-field
           class="mx-2"
@@ -89,6 +89,9 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-container v-else>
+      <v-btn to="/">Bitte einloggen</v-btn>
+    </v-container>
   </v-container>
 </template>
 
@@ -97,6 +100,7 @@ export default {
   name: "IndexPage",
   data() {
     return {
+      isLoggedIn: false,
       searchInput: "",
       selectedDayFilter: "Kein Filter",
       DayFilter: [
@@ -514,6 +518,7 @@ export default {
   },
   mounted() {
     this.favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    this.isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   },
   methods: {
     favorite(rezept) {

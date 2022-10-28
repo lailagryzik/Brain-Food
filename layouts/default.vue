@@ -79,7 +79,9 @@ export default {
           to: "/nahrungsergänzung",
         },
       ],
-
+      get isLoggedIn() {
+        return localStorage.getItem("isloggedin") == "true";
+      },
       right: true,
       rightDrawer: false,
       title: "Vuetify.js",
@@ -87,7 +89,7 @@ export default {
   },
   methods: {
     logout() {
-      localStorage.clear();
+      localStorage.removeItem("isloggedin");
       this.$router.push("/");
     },
   },

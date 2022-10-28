@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <!--add header-->
-    <v-container fluid>
+    <v-container fluid v-if="this.isLoggedIn">
       <v-row
         ><v-text-field
           class="mx-2"
@@ -92,6 +92,9 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-container v-else>
+      <v-btn to="/">Bitte einloggen</v-btn>
+    </v-container>
   </v-container>
 </template>
 
@@ -99,6 +102,7 @@
 export default {
   data() {
     return {
+      isLoggedIn: false,
       searchInput: "",
       selectedNutritionFilters: "kein Filter", //default filter wert für mikro
       selectedPurposeFilters: "kein Filter", //default filter wert für mikro
@@ -315,6 +319,9 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    this.isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   },
   computed: {
     filteredFood() {

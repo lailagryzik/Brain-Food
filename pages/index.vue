@@ -28,11 +28,13 @@
           <v-text-field
             v-model="versicherungsnummer"
             label="Versicherungsnummer"
+            type="number"
             required
           ></v-text-field>
           <v-text-field
             v-model="birthdate"
             label="Geburtsdatum"
+            type="date"
             required
           ></v-text-field>
           <v-text-field
@@ -51,7 +53,7 @@
           <v-btn 
             color="primary" 
             nuxt @click="login"
-            :disabled="name!='Laila Gryzik' || password!='123456789'"
+            :disabled="name?.length<=4 || password!='123456789'"
           > anmelden </v-btn>
         </v-card-actions>
       </v-card>
@@ -76,13 +78,16 @@ export default {
       localStorage.setItem("name", this.name);
       localStorage.setItem("versicherungsnummer", this.versicherungsnummer);
       localStorage.setItem("birthdate", this.birthdate);
+      localStorage.setItem("isLoggedIn", true);
       this.$router.push("/startseite");
     },
   },
   mounted() {
     this.name = localStorage.getItem("name");
     this.versicherungsnummer = localStorage.getItem("versicherungsnummer");
-    if(this.name && this.versicherungsnummer) {
+    this.isLoggedIn = localStorage.getItem("isloggedin")== "true";
+    console.log("is logged in", this.isLoggedIn);
+    if (this.isLoggedIn) {
       this.$router.push("/startseite");
     }
   },

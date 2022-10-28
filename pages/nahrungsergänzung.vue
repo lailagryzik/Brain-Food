@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <!--add header-->
-    <v-container fluid>
+    <v-container fluid v-if="this.isLoggedIn">
       <v-row dense>
         <v-col v-for="f in food" :key="f.title" :cols="3">
           <v-card>
@@ -38,6 +38,9 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-container v-else>
+      <v-btn to="/">Bitte einloggen</v-btn>
+    </v-container>
   </v-container>
 </template>
 
@@ -45,6 +48,7 @@
 export default {
   data() {
     return {
+      isLoggedIn: false,
       food: [
         {
           title: "Vitamin B12",
@@ -142,5 +146,8 @@ export default {
     };
   },
   computed: {},
+  mounted() {
+    this.isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+  },
 };
 </script>
