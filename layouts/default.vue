@@ -89,7 +89,7 @@ export default {
   },
   methods: {
     logout() {
-      localStorage.removeItem("isloggedin");
+      localStorage.removeItem("isloggedIn");
       this.$router.push("/");
     },
   },
