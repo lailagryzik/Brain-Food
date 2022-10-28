@@ -73,6 +73,11 @@ export default {
           title: "Rezepte",
           to: "/rezepte",
         },
+        {
+          icon: "mdi-pill-multiple",
+          title: "Nahrungsergänzung",
+          to: "/nahrungsergänzung",
+        },
       ],
 
       right: true,
