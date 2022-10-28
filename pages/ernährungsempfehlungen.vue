@@ -128,9 +128,9 @@ export default {
         {
           title: "Wasser",
           src: "https://cdn.pixabay.com/photo/2014/12/24/05/02/drop-of-water-578897_960_720.jpg",
-          description: "Wasser ist wichtig für den Körper",
-          stress: 1,
-          concentration: 1,
+
+          stress: 5,
+          concentration: 5,
           nutrition: {
             mikro: [
               "Spurenelemente",
@@ -146,9 +146,9 @@ export default {
         {
           title: "Nüsse",
           src: "https://cdn.pixabay.com/photo/2019/01/31/21/31/nut-3967992_960_720.jpg",
-          description: "Wallnüsse sind gut für das Gehirn",
-          stress: 2,
-          concentration: 3,
+
+          stress: 4,
+          concentration: 4,
           nutrition: {
             makro: ["Protein", "Fett", "Komplexe Kohlenhydrate"],
             mikro: [
@@ -163,14 +163,154 @@ export default {
           },
         },
         {
-          title: "Vollkornprodukte",
+          title: "Vollkornprodukte/Getreide",
           src: "https://cdn.pixabay.com/photo/2016/03/05/22/21/baked-1239259_960_720.jpg",
-          description: "Vollkornprodukte halten lange satt",
+
           stress: 3,
           concentration: 4,
           nutrition: {
             makro: ["Komplexe Kohlenhydrate"],
             mikro: ["Magnesium", "Zink", "Eisen"],
+          },
+        },
+        {
+          title: "Pflanzliches Öl",
+          src: "https://cdn.pixabay.com/photo/2015/10/02/15/59/olive-oil-968657_960_720.jpg",
+
+          stress: 4,
+          concentration: 1,
+          nutrition: {
+            makro: ["Fett"],
+            mikro: ["Vitaminlieferant", "Vitamin E"],
+          },
+        },
+        {
+          title: "Fisch",
+          src: "https://media.istockphoto.com/photos/grilled-halibut-with-spinach-leeks-and-pine-nuts-picture-id503337620?b=1&k=20&m=503337620&s=170667a&w=0&h=L-LJlhhsNNQVrY65U6Ogj4vRZyC8QitUJshHl-mgZ_I=",
+
+          stress: 4,
+          concentration: 4,
+          nutrition: {
+            makro: ["Fett"],
+            mikro: [
+              "Vitamin B3",
+              "Vitamin B12",
+              "Kalium",
+
+              "Magnesium",
+              "Selen",
+              "Zink",
+            ],
+          },
+        },
+        {
+          title: "Hülsenfrüchte",
+          src: "https://media.istockphoto.com/photos/an-up-close-picture-of-organic-legumes-picture-id163729647?b=1&k=20&m=163729647&s=170667a&w=0&h=v5XfpyB03WccAkxooV60n7AJBwQQyGa-nzcmVDMPRww=",
+
+          stress: 4,
+          concentration: 4,
+          nutrition: {
+            makro: ["Komplexe Kohlenhydrate", "Eiweiß"],
+            mikro: ["Magnesium", "Eisen", "Zink", "Vitamin B9"],
+          },
+        },
+        {
+          title: "Kartoffeln",
+          src: "https://cdn.pixabay.com/photo/2016/08/11/08/43/potatoes-1585060__340.jpg",
+
+          stress: 2,
+          concentration: 2,
+          nutrition: {
+            makro: ["Komplexe Kohlenhydrate"],
+            mikro: ["Vintamin B12", "Vitamin C", "Magnesium", "Kalium"],
+          },
+        },
+        {
+          title: "Obst",
+          src: "https://cdn.pixabay.com/photo/2021/10/07/15/24/fruits-6688947__340.jpg",
+
+          stress: 3,
+          concentration: 4,
+          nutrition: {
+            makro: ["Komplexe Kohlenhydrate", "Eiweiß"],
+            mikro: ["Vitamin B3", "Vitamin B6", "Vitamin C", "Kalium"],
+          },
+        },
+        {
+          title: "Samen/Kerne",
+          src: "https://cdn.pixabay.com/photo/2019/04/06/17/46/nuts-4107883__340.jpg",
+
+          stress: 4,
+          concentration: 4,
+          nutrition: {
+            makro: ["Komplexe Kohlenhydrate", "Eiweiß", "Fett"],
+            mikro: ["Vitamin B1", "Vitamin E", "Eisen", "Kalium"],
+          },
+        },
+        {
+          title: "Weizenkeime",
+          src: "https://media.istockphoto.com/photos/wheat-sprouts-on-a-green-plate-picture-id183584384?k=20&m=183584384&s=612x612&w=0&h=e3GFVfiR1o5dEOOyY5HWDARPKJqjYlOH14_hn78O73s=",
+
+          stress: 2,
+          concentration: 3,
+          nutrition: {
+            makro: ["Komplexe Kohlenhydrate", "Eiweiß"],
+            mikro: ["Vitamin B1", "Vitamin B9", "Vitamin E"],
+          },
+        },
+        {
+          title: "Blattgemüse",
+          src: "https://cdn.pixabay.com/photo/2017/04/09/21/35/spinach-2216967_960_720.jpg",
+
+          stress: 2,
+          concentration: 3,
+          nutrition: {
+            makro: [],
+            mikro: ["Vitamin E", "Vitamin B9", "Eisen"],
+          },
+        },
+        {
+          title: "Avocado",
+          src: "https://cdn.pixabay.com/photo/2017/08/15/14/34/avocado-2644150__340.jpg",
+
+          stress: 3,
+          concentration: 2,
+          nutrition: {
+            makro: ["Fett"],
+            mikro: ["Vitamin B6", "Vitamin B3", "Vitamin E"],
+          },
+        },
+        {
+          title: "Zitrusfrüchte",
+          src: "https://cdn.pixabay.com/photo/2019/11/30/11/14/oranges-4663073__340.jpg",
+
+          stress: 3,
+          concentration: 3,
+          nutrition: {
+            makro: ["Komplexe Kohlenhydrate"],
+            mikro: ["Vitamin C", "Vitamin E"],
+          },
+        },
+        {
+          title: "Zitrusfrüchte",
+          src: "https://cdn.pixabay.com/photo/2019/11/30/11/14/oranges-4663073__340.jpg",
+
+          stress: 3,
+          concentration: 3,
+          nutrition: {
+            makro: ["Komplexe Kohlenhydrate"],
+            mikro: ["Vitamin C", "Vitamin E"],
+          },
+        },
+        {
+          title: "Zwiebelgemüse",
+          src: "hhttps://cdn.pixabay.com/photo/2016/03/05/22/59/onions-1239423__340.jpg",
+
+          stress: 2,
+          concentration: 2,
+          nutrition: {
+            makro: [],
+            mikro: ["Selen", "Vitamin E"],
           },
         },
       ],
