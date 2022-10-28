@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <!--add header-->
+    <!--Hinweise-->
     <v-container fluid v-if="this.isLoggedIn"
       >Nahrungsergänzungsmittel sind kein Ersatz für eine gesunde Ernährung.
 
@@ -24,7 +24,7 @@
             >
               <v-card-title v-text="f.title"></v-card-title>
             </v-img>
-
+            <!--Methode für Bewertung der Lebensmittel-->
             <v-card-actions>
               <v-container>
                 <v-row>

@@ -36,6 +36,7 @@
       <v-row> <v-col>Wie geht es Ihnen heute? </v-col> </v-row>
       <v-row class="mx-auto pa-3">
         <v-col>
+          <!--Zuweisung der Smileys-->
           <v-icon color="red" @click="setEmotion(1)">mdi-emoticon-dead</v-icon>
         </v-col>
         <v-col>
@@ -71,6 +72,7 @@
 
 <script>
 export default {
+  //Speichern der vorangegangenen Einträge
   name: "Startseite",
   data: () => ({
     isLoggedIn: false,
@@ -92,7 +94,7 @@ export default {
       this.tracked = JSON.parse(localTracked);
     }
     this.isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-  },
+  }, //Methode zum Setzen der Smileys
   methods: {
     setEmotion(emotion) {
       let year_month_date = this.today.toISOString().split("T")[0];

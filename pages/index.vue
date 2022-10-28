@@ -8,18 +8,19 @@
         <v-card-title class="headline">
           Anmeldung:
         </v-card-title>
-        <v-card-text>
-          <p>
+        <v-card-text> 
+          <!--Hinweis-->
+          <p> 
             Bitte melden Sie sich mit Ihren Zugangsdaten an.
             </br>Die Zugangsdaten haben Sie postalisch von Ihrer Krankenversicherung erhalten.
           </p>
           <p>
             Falls Sie noch keine Zugangsdaten haben, wenden Sie sich bitte an Ihre Krankenversicherung.
-          </p>
+          </p> 
   
           <hr class="my-3" />        
           <br />
-          <!--name and password field -->
+          <!--Name und Passwort Feld -->
           <v-text-field
             v-model="name"
             label="Name"
@@ -53,6 +54,7 @@
           <v-btn 
             color="primary" 
             nuxt @click="login"
+    
             :disabled="name?.length<=4 || password!='123456789'"
           > anmelden </v-btn>
         </v-card-actions>
@@ -73,6 +75,7 @@ export default {
       show1: false,
     };
   },
+  //Methoden für die Anmeldung
   methods: {
     login() {
       localStorage.setItem("name", this.name);
@@ -82,6 +85,7 @@ export default {
       this.$router.push("/startseite");
     },
   },
+  //wird ausgeführt beim Laden der Seite
   mounted() {
     this.name = localStorage.getItem("name");
     this.versicherungsnummer = localStorage.getItem("versicherungsnummer");

@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    <!--add header-->
     <v-container fluid v-if="this.isLoggedIn">
       <v-row
         ><v-text-field
@@ -104,6 +103,7 @@ export default {
       searchInput: "",
       selectedDayFilter: "Kein Filter",
       DayFilter: [
+        //Methode für Zeiten Filter
         "Kein Filter",
         "Frühstück",
         "Mittagessen",
@@ -111,8 +111,9 @@ export default {
         "Snack",
       ],
       selectedZutatFilter: "Kein Filter",
-      //ZutatFilter: ["Kein Filter", "Brot", "Senf", "Grünkohl"],
+      //Methode für Zutaten Filter
       rezepte: [
+        //Anzeige der Rezepte
         {
           title: "Powermüsli",
           description: [
@@ -532,6 +533,7 @@ export default {
       localStorage.setItem("favorites", JSON.stringify(this.favorites));
     },
   },
+  //Methode zum Zeiten Filter
   computed: {
     filteredRezepte() {
       let filtered = this.rezepte;
@@ -553,7 +555,7 @@ export default {
         );
       }
       return filtered;
-    },
+    }, //Methode zum Zutaten Filter
     ZutatFilter() {
       let zutaten = [];
       zutaten.push("Kein Filter");

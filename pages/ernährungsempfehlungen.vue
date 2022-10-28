@@ -102,11 +102,12 @@
 export default {
   data() {
     return {
-      isLoggedIn: false,
+      isLoggedIn: false, //Blendet Menü aus wenn Benutzer/in nicht eingeloggt ist
       searchInput: "",
       selectedNutritionFilters: "kein Filter", //default filter wert für mikro
       selectedPurposeFilters: "kein Filter", //default filter wert für mikro
       NutritionFilters: [
+        //Filtermöglichkeiten
         "kein Filter",
         "Fett",
         "Komplexe Kohlenhydrate",
@@ -122,20 +123,22 @@ export default {
         "Eisen",
         "Zink",
         "Selen",
-      ], //erlaubte filter werte
+      ], //erlaubte Filter Werte
       PurposeFilters: [
         "kein Filter",
         "Stressreduktion",
         "Konzentrationssteigerung",
-      ], //erlaubte filter werte
+      ], //erlaubte Filter Werte
       food: [
+        //Angezeigte Lebensmittel
         {
           title: "Wasser",
-          src: "https://cdn.pixabay.com/photo/2014/12/24/05/02/drop-of-water-578897_960_720.jpg",
+          src: "https://cdn.pixabay.com/photo/2014/12/24/05/02/drop-of-water-578897_960_720.jpg", //Bildquelle
 
-          stress: 5,
-          concentration: 5,
+          stress: 5, //Bewertung Stressreduktion
+          concentration: 5, //Bewertung Konzentrationssteigerung
           nutrition: {
+            //Nährwerte
             mikro: [
               "Spurenelemente",
               "Magnesium",
@@ -149,7 +152,7 @@ export default {
         },
         {
           title: "Nüsse",
-          src: "https://cdn.pixabay.com/photo/2019/01/31/21/31/nut-3967992_960_720.jpg",
+          src: "https://cdn.pixabay.com/photo/2019/01/31/21/31/nut-3967992_960_720.jpg", //Bildquelle
 
           stress: 4,
           concentration: 4,
@@ -168,7 +171,7 @@ export default {
         },
         {
           title: "Vollkornprodukte/Getreide",
-          src: "https://cdn.pixabay.com/photo/2016/03/05/22/21/baked-1239259_960_720.jpg",
+          src: "https://cdn.pixabay.com/photo/2016/03/05/22/21/baked-1239259_960_720.jpg", //Bildquelle
 
           stress: 3,
           concentration: 4,
@@ -179,7 +182,7 @@ export default {
         },
         {
           title: "Pflanzliches Öl",
-          src: "https://cdn.pixabay.com/photo/2015/10/02/15/59/olive-oil-968657_960_720.jpg",
+          src: "https://cdn.pixabay.com/photo/2015/10/02/15/59/olive-oil-968657_960_720.jpg", //Bildquelle
 
           stress: 4,
           concentration: 1,
@@ -190,7 +193,7 @@ export default {
         },
         {
           title: "Fisch",
-          src: "https://media.istockphoto.com/photos/grilled-halibut-with-spinach-leeks-and-pine-nuts-picture-id503337620?b=1&k=20&m=503337620&s=170667a&w=0&h=L-LJlhhsNNQVrY65U6Ogj4vRZyC8QitUJshHl-mgZ_I=",
+          src: "https://media.istockphoto.com/photos/grilled-halibut-with-spinach-leeks-and-pine-nuts-picture-id503337620?b=1&k=20&m=503337620&s=170667a&w=0&h=L-LJlhhsNNQVrY65U6Ogj4vRZyC8QitUJshHl-mgZ_I=", //Bildquelle
 
           stress: 4,
           concentration: 4,
@@ -209,7 +212,7 @@ export default {
         },
         {
           title: "Hülsenfrüchte",
-          src: "https://media.istockphoto.com/photos/an-up-close-picture-of-organic-legumes-picture-id163729647?b=1&k=20&m=163729647&s=170667a&w=0&h=v5XfpyB03WccAkxooV60n7AJBwQQyGa-nzcmVDMPRww=",
+          src: "https://media.istockphoto.com/photos/an-up-close-picture-of-organic-legumes-picture-id163729647?b=1&k=20&m=163729647&s=170667a&w=0&h=v5XfpyB03WccAkxooV60n7AJBwQQyGa-nzcmVDMPRww=", //Bildquelle
 
           stress: 4,
           concentration: 4,
@@ -220,7 +223,7 @@ export default {
         },
         {
           title: "Kartoffeln",
-          src: "https://cdn.pixabay.com/photo/2016/08/11/08/43/potatoes-1585060__340.jpg",
+          src: "https://cdn.pixabay.com/photo/2016/08/11/08/43/potatoes-1585060__340.jpg", //Bildquelle
 
           stress: 2,
           concentration: 2,
@@ -231,7 +234,7 @@ export default {
         },
         {
           title: "Obst",
-          src: "https://cdn.pixabay.com/photo/2021/10/07/15/24/fruits-6688947__340.jpg",
+          src: "https://cdn.pixabay.com/photo/2021/10/07/15/24/fruits-6688947__340.jpg", //Bildquelle
 
           stress: 3,
           concentration: 4,
@@ -242,7 +245,7 @@ export default {
         },
         {
           title: "Samen/Kerne",
-          src: "https://cdn.pixabay.com/photo/2019/04/06/17/46/nuts-4107883__340.jpg",
+          src: "https://cdn.pixabay.com/photo/2019/04/06/17/46/nuts-4107883__340.jpg", //Bildquelle
 
           stress: 4,
           concentration: 4,
@@ -253,7 +256,7 @@ export default {
         },
         {
           title: "Weizenkeime",
-          src: "https://media.istockphoto.com/photos/wheat-sprouts-on-a-green-plate-picture-id183584384?k=20&m=183584384&s=612x612&w=0&h=e3GFVfiR1o5dEOOyY5HWDARPKJqjYlOH14_hn78O73s=",
+          src: "https://media.istockphoto.com/photos/wheat-sprouts-on-a-green-plate-picture-id183584384?k=20&m=183584384&s=612x612&w=0&h=e3GFVfiR1o5dEOOyY5HWDARPKJqjYlOH14_hn78O73s=", //Bildquelle
 
           stress: 2,
           concentration: 3,
@@ -264,7 +267,7 @@ export default {
         },
         {
           title: "Blattgemüse",
-          src: "https://cdn.pixabay.com/photo/2017/04/09/21/35/spinach-2216967_960_720.jpg",
+          src: "https://cdn.pixabay.com/photo/2017/04/09/21/35/spinach-2216967_960_720.jpg", //Bildquelle
 
           stress: 2,
           concentration: 3,
@@ -275,7 +278,7 @@ export default {
         },
         {
           title: "Avocado",
-          src: "https://cdn.pixabay.com/photo/2017/08/15/14/34/avocado-2644150__340.jpg",
+          src: "https://cdn.pixabay.com/photo/2017/08/15/14/34/avocado-2644150__340.jpg", //Bildquelle
 
           stress: 3,
           concentration: 2,
@@ -286,7 +289,7 @@ export default {
         },
         {
           title: "Zitrusfrüchte",
-          src: "https://cdn.pixabay.com/photo/2019/11/30/11/14/oranges-4663073__340.jpg",
+          src: "https://cdn.pixabay.com/photo/2019/11/30/11/14/oranges-4663073__340.jpg", //Bildquelle
 
           stress: 3,
           concentration: 3,
@@ -298,7 +301,7 @@ export default {
 
         {
           title: "Zwiebelgemüse",
-          src: "https://cdn.pixabay.com/photo/2016/03/05/22/59/onions-1239423__340.jpg",
+          src: "https://cdn.pixabay.com/photo/2016/03/05/22/59/onions-1239423__340.jpg", //Bildquelle
 
           stress: 2,
           concentration: 2,
