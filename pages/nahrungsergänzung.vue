@@ -1,8 +1,19 @@
 <template>
   <v-container>
     <!--add header-->
-    <v-container fluid v-if="this.isLoggedIn">
-      <v-row dense>
+    <v-container fluid v-if="this.isLoggedIn"
+      >Nahrungsergänzungsmittel sind kein Ersatz für eine gesunde Ernährung.
+
+      <p>
+        Bei akuten oder chronischen Erkrankungen sollte die Einnahme von
+        Nahrungsergänzungsmitteln mit einer ärztlichen Fachperson Abgesprochen
+        werden.
+      </p>
+      <p>
+        Auch eine Übderdosierung an Nahrungsergänzungsmitteln ist möglich und
+        kann enrsthafte körperliche Schäden mit sich bringen.
+      </p>
+      <v-row dense class="mt-3">
         <v-col v-for="f in food" :key="f.title" :cols="3">
           <v-card>
             <v-img
@@ -146,6 +157,7 @@ export default {
     };
   },
   computed: {},
+
   mounted() {
     this.isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   },

@@ -295,20 +295,10 @@ export default {
             mikro: ["Vitamin C", "Vitamin E"],
           },
         },
-        {
-          title: "Zitrusfrüchte",
-          src: "https://cdn.pixabay.com/photo/2019/11/30/11/14/oranges-4663073__340.jpg",
 
-          stress: 3,
-          concentration: 3,
-          nutrition: {
-            makro: ["Komplexe Kohlenhydrate"],
-            mikro: ["Vitamin C", "Vitamin E"],
-          },
-        },
         {
           title: "Zwiebelgemüse",
-          src: "hhttps://cdn.pixabay.com/photo/2016/03/05/22/59/onions-1239423__340.jpg",
+          src: "https://cdn.pixabay.com/photo/2016/03/05/22/59/onions-1239423__340.jpg",
 
           stress: 2,
           concentration: 2,
