@@ -423,6 +423,91 @@ export default {
           ],
           tageszeit: ["Snack"],
         },
+        {
+          title: "Penne statt Pennen",
+          description: [
+            "1. Nudeln nach Packungsanleitung kochen",
+            "2. Brokkoli waschen, in kleine Röschen teilen und in Salzwasser 5 Minuten garen",
+            "3. Knoblauch und Zwiebeln hacken und in Öl anbraten",
+            "4. Brokkoli abgießen, getrocknete Tomaten kleinschneiden und mit der Knoblauch-Zwiebel-Mischung vermengen",
+            "5. Nudeln abgießen, alles vermengen und würzen",
+            "6. Mit Rucola garnieren",
+          ],
+          zutaten: [
+            {
+              name: "Knoblauch",
+              menge: "1 Zehe",
+            },
+
+            {
+              name: "Zwiebel",
+              menge: "1",
+            },
+            {
+              name: "Brokkoli",
+              menge: "400 g",
+            },
+            {
+              name: "Ricotta",
+              menge: "100 g",
+            },
+            {
+              name: "Getrocknete Tomaten",
+              menge: "25 g",
+            },
+            {
+              name: "Rucola",
+              menge: "1 Bund",
+            },
+            {
+              name: "Vollkorn Penne",
+              menge: "350 g",
+            },
+          ],
+          tageszeit: ["Abendessen"],
+        },
+        {
+          title: "Kichererbsen-Avocado Salat",
+          description: [
+            "1. Grapefruit entsaften und mit Honig und Öl vermischen",
+            "2. Avocado schälen, in Scheiben schneiden und mit der Marinade vermengen",
+            "3. Kichererbsen und Koriander hinzugeben",
+            "4. Mit Salz und Pfeffer würzen",
+            "5. Mit Sesam garnieren",
+          ],
+          zutaten: [
+            {
+              name: "Grapefruit",
+              menge: "1",
+            },
+
+            {
+              name: "Honig",
+              menge: "3 TL",
+            },
+            {
+              name: "Öl",
+              menge: "2 EL",
+            },
+            {
+              name: "Sesam",
+              menge: "1 EL",
+            },
+            {
+              name: "Koriander",
+              menge: "1 Bund",
+            },
+            {
+              name: "Avocado",
+              menge: "1",
+            },
+            {
+              name: "Kichererbsen",
+              menge: "1 Dose",
+            },
+          ],
+          tageszeit: ["Abendessen"],
+        },
       ],
       favorites: [],
     };
